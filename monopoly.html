@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Game Interface</h1>
+    <button id="startGame">Start/Restart Game</button>
+    <div id="players"></div>
+
+    <!-- Game Setup Modal -->
+    <div id="setupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Game Setup</h2>
+            <label class="label-setup" for="numPlayers">Number of Players:</label>
+            <input type="number" id="numPlayers" min="1" required><br><br>
+            <label class="label-setup" for="initialFund">Initial Fund:</label>
+            <input type="number" id="initialFund" min="0" required><br><br>
+            <button id="setupGame">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Money Adjustment Modal -->
+    <div id="moneyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Adjust Money</h2>
+            <div id="playerNumber"></div>
+            <div id="originalValue"></div>
+            <input type="number" id="adjustmentAmount" readonly>
+            <div id="calculator" class="calculator">
+                <button onclick="appendNumber(1)">1</button>
+                <button onclick="appendNumber(2)">2</button>
+                <button onclick="appendNumber(3)">3</button>
+                <button onclick="appendNumber(4)">4</button>
+                <button onclick="appendNumber(5)">5</button>
+                <button onclick="appendNumber(6)">6</button>
+                <button onclick="appendNumber(7)">7</button>
+                <button onclick="appendNumber(8)">8</button>
+                <button onclick="appendNumber(9)">9</button>
+                <button onclick="appendNumber(0)">0</button>
+                <button onclick="clearInput()">C</button>
+                <div class="operation-buttons">
+                    <button onclick="submitAdjustment('add')">+</button>
+                    <button onclick="submitAdjustment('subtract')">-</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
